@@ -3,7 +3,7 @@ import db from './models/index.js';  // Ensure correct import with .js extension
 import authRoutes from './router/auth.router.js'
 import itemRoutes from './router/itemcreate.route.js'
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT ||5000;
 import cors from 'cors';
 app.use(cors());
 import dotenv from 'dotenv';

@@ -4,7 +4,7 @@ import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import db from '../models/index.js';
 
-const JWT_SECRET = process.env.JWT_SECRET;
+const JWT_SECRET = process.env.JWT_SECRET || 'your_secret_key';
 
 export const registerUser = async (req, res) => {
   const { username, email, password } = req.body;
@@ -51,7 +51,8 @@ export const loginUser = async (req, res) => {
        username:user.username,
         email:user.email });
   } catch (error) {
-    return res.status(500).json({ message: 'Error logging in', error });
+    console.log(error)
+    return res.status(500).json({ message: 'Error logging in from backend', error });
   }
 };
 
