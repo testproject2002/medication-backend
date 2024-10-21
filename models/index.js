@@ -3,13 +3,12 @@ import config from '../configuration/database.js';  // Ensure the correct path a
 
 // Choose the environment (development, test, production)
 const env = process.env.NODE_ENV || 'development';
-const dbConfig = config[env];
+// const dbConfig = config[env];
 
 // Initialize Sequelize
-const sequelize = new Sequelize(dbConfig.database, dbConfig.username, dbConfig.password, {
-  host: dbConfig.host,
-  dialect: dbConfig.dialect,
-  logging: dbConfig.logging || false, // Optional, remove if not necessary
+const sequelize = new Sequelize('medical_data', 'root', 'admin123', {
+  host: 'localhost',
+  dialect: 'mysql',
 });
 
 // Test the connection
